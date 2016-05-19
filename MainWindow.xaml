@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Label x:Name="label" Content="PROXAR !" HorizontalAlignment="Left" Margin="172,125,0,0" VerticalAlignment="Top" Foreground="#FFDE1111" FontSize="30"/>
+        <Label x:Name="label" Content="PROXAR !" HorizontalAlignment="Left" Margin="115,75,0,0" VerticalAlignment="Top" Foreground="#FFDE1111" FontSize="30"/>
 
     </Grid>
 </Window>
