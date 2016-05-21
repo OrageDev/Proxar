@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Inscription" Height="300" Width="300">
     <Grid>
-        
+        <TextBox x:Name="Nom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="122,35,0,0"/>
+        <TextBox x:Name="Prenom" HorizontalAlignment="Left" Height="23" Margin="122,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Identifiant" HorizontalAlignment="Left" Height="23" Margin="122,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MotDePasse" HorizontalAlignment="Left" Height="23" Margin="122,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Promotion" HorizontalAlignment="Left" Margin="122,115,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Nom :" HorizontalAlignment="Left" Margin="55,32,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Prénom :" HorizontalAlignment="Left" Margin="40,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Identifiant :" HorizontalAlignment="Left" Margin="27,152,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Mot de passe :" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Promotion :" HorizontalAlignment="Left" Margin="25,111,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

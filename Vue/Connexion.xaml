@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Connexion" Height="300" Width="300">
     <Grid>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Center" Margin="0,140,0,0" VerticalAlignment="Top" Width="125"/>
-        <Button x:Name="connexionButton" Content="Connexion" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" Width="75"/>
+        <PasswordBox x:Name="MotDePasse" HorizontalAlignment="Center" Margin="0,140,0,0" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="connexionButton" Content="Connexion" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" Width="75" Click="connexionButton_Click"/>
         <Label x:Name="passLabel" Content="Mot de passe :&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.394,3.46" Margin="80,110,0,0" Height="26"/>
-        <TextBox x:Name="identifiant" HorizontalAlignment="Center" Height="23" Margin="0,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="Identifiant" HorizontalAlignment="Center" Height="23" Margin="0,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
         <Label x:Name="idLabel" Content="Identifiant :&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,50,0,0" Height="27"/>
     </Grid>
 </Window>

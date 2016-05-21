@@ -19,9 +19,16 @@ namespace Proxar.Vue
     /// </summary>
     public partial class Inscription : Window
     {
+        private List<string> promotions = new List<string>();
+
         public Inscription()
         {
             InitializeComponent();
+            for (int i = 1; i <= 5; i++)
+            {
+                this.promotions.Add("A" + i);
+            }
+            Promotion.ItemsSource = promotions;
         }
     }
 }
