@@ -24,5 +24,21 @@ namespace Proxar.Vue
         {
             InitializeComponent();
         }
+
+        private void ConnexionButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Connexion connexion = new Connexion();
+            connexion.ShowDialog();
+            this.Close();
+        }
+
+        private void Inscription_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Inscription inscription = new Inscription();
+            inscription.ShowDialog();
+            this.Close();
+        }
     }
 }
