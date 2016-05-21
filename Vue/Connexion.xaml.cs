@@ -5,6 +5,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Data;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -22,12 +23,14 @@ namespace Proxar.Vue
     {
         public Connexion()
         {
+
             InitializeComponent();
         }
-
+        
+        
         private void connexionButton_Click(object sender, RoutedEventArgs e)
         {
-            if(Identifiant.Text == "Test" && MotDePasse.Password == "test")
+            if (Identifiant.Text == "Test" && MotDePasse.Password == "test")
             {
                 MessageBox.Show("ok");
             }

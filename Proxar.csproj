@@ -86,6 +86,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Modele\BDDUserManagement.cs" />
     <Compile Include="Vue\Connexion.xaml.cs">
       <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
@@ -128,7 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controleur\" />
-    <Folder Include="Modele\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Vue\Images\logo_exia.jpg" />
