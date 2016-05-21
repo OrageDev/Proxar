@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Proxar.Modele;
 
 namespace Proxar.Vue
 {
@@ -30,9 +31,13 @@ namespace Proxar.Vue
         
         private void connexionButton_Click(object sender, RoutedEventArgs e)
         {
+            BDDUserManagement connection = new BDDUserManagement();
+            int test = connection.SelectRequest();
+
+
             if (Identifiant.Text == "Test" && MotDePasse.Password == "test")
             {
-                MessageBox.Show("ok");
+                MessageBox.Show(test.ToString());
             }
         }
     }

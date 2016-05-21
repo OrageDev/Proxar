@@ -20,7 +20,7 @@ namespace Proxar.Modele
 
         public BDDUserManagement()
         {
-            this.cnx = @"Provider = db-proxar.database.windows.net";
+            this.cnx = @"Provider =db-proxar.database.windows.net;Initial Catalog=db_proxar;Persist Security Info=True;User ID=rootProxar;Password=@PR0xAR@";
             this.oCNX = new System.Data.OleDb.OleDbConnection(this.cnx);
             this.oCMD = null;
             this.oDA = null;
@@ -30,15 +30,16 @@ namespace Proxar.Modele
 
 
 
-        public void SelectRequest()
+        public int SelectRequest()
         {
 
             this.oDS = new DataSet();
-            this.rq_sql = "SELECT * FROM TB_PERSONNE;";                              //Requête SELECT Paramétrée
+            this.rq_sql = "SELECT * FROM db-proxar.db_proxar;";                              //Requête SELECT Paramétrée
             this.oCMD = new System.Data.OleDb.OleDbCommand(this.rq_sql, this.oCNX);  //Création d'un objet commande qui prend en paramètre la requête SQL et la l'objet de Connexion a la BDD.
             this.oDA = new System.Data.OleDb.OleDbDataAdapter(this.oCMD);            //Création d'un objet DataAdapter qui prend en paramètre l'objet commande. (DataAdapter et l'interface réel entre l'application et la BDD.
             this.oDA.Fill(this.oDS, "etudiant");
-
+            int test = this.oDS.Tables.Count;
+            return test;
         }
           
     }
