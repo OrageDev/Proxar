@@ -32,12 +32,12 @@ namespace Proxar.Vue
         private void connexionButton_Click(object sender, RoutedEventArgs e)
         {
             BDDUserManagement connection = new BDDUserManagement();
-            int test = connection.SelectRequest();
+            connection.Connection();
 
 
             if (Identifiant.Text == "Test" && MotDePasse.Password == "test")
             {
-                MessageBox.Show(test.ToString());
+                //MessageBox.Show(test.ToString());
             }
         }
     }
