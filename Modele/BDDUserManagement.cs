@@ -12,19 +12,20 @@ namespace Proxar.Modele
     class BDDUserManagement
     {
 
-        //private string rq_sql;                              //Objet string qui contiendra les requêtes SQL
+        private string rq_sql;                              //Objet string qui contiendra les requêtes SQL
         private string cnx;                                 //Object string qui contiendra la clé de connection a la BDD
-        //private SqlConnection oCNX;                         //Objet Connection de BDD
-        //private SqlCommand oCMD;                            //Objet Command qui executera une requête SQL
-        //private SqlDataAdapter oDA;                         //Objet DataAdapter qui fait le lien entre l'application et la BDD
+        private SqlConnection sCNX;                         //Objet Connection de BDD
+        private SqlCommand sCMD;                            //Objet Command qui executera une requête SQL
+        private SqlDataReader sDR;                         //Objet DataReader qui fait le lien entre l'application et la BDD
         //private System.Data.DataSet oDS;                    //Objet qui stock en local les informations de la BDD
 
         public BDDUserManagement()
         {
-            //this.rq_sql = null;
-            //Changer l'emplacement ou ce trouve votre BDD.
+            this.rq_sql = null;
+            this.sCNX = null;  
+            this.sCMD = null;
             this.cnx = @"Data Source=db-proxar.database.windows.net;Initial Catalog=db_proxar;Persist Security Info=True;User ID=rootProxar;Password=@PR0xAR@";
-            //this.oCNX = new SqlConnection(this.cnx);
+            this.sDR = null;
             //this.oCMD = null;
             //this.oDA = null;
             //this.oDS = new DataSet();
@@ -33,16 +34,35 @@ namespace Proxar.Modele
 
 
 
-        public void Connection()
+        public void SelectStudent()
         {
             
-            SqlConnection cnn;
-            cnn = new SqlConnection(this.cnx);
+            this.rq_sql= "Select * FROM Etudiant;";
+            this.sCNX = new SqlConnection(this.cnx);
             try
             {
-                cnn.Open();
-                MessageBox.Show("Connection Open ! ");
-                cnn.Close();
+                this.sCNX.Open();
+                this.sCMD = new SqlCommand(this.rq_sql, this.sCNX);
+                this.sDR = this.sCMD.ExecuteReader();
+                if (this.sDR.FieldCount != 0)
+                {
+
+
+                    while (this.sDR.Read())
+                    {
+                        MessageBox.Show(this.sDR.GetValue(0) + " - " + this.sDR.GetValue(1) + " - " + this.sDR.GetValue(2) + " - " + this.sDR.GetValue(3));
+                    }
+                    this.sDR.Close();
+                    this.sCMD.Dispose();
+                    this.sCNX.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Field < 0");
+                        this.sDR.Close();
+                        this.sCMD.Dispose();
+                        this.sCNX.Close();
+                }
             }
             catch (Exception ex)
             {
