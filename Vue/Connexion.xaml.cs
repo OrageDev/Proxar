@@ -32,13 +32,19 @@ namespace Proxar.Vue
         private void connexionButton_Click(object sender, RoutedEventArgs e)
         {
             BDDUserManagement connection = new BDDUserManagement();
-            connection.SelectStudent();
-
-
-            if (Identifiant.Text == "Test" && MotDePasse.Password == "test")
+            if (connection.Connection() != false)
             {
-                //MessageBox.Show(test.ToString());
+               
+                if(false != connection.SelectStudent(Identifiant.Text, MotDePasse.Password))
+                {
+                    MessageBox.Show("Bonjour : " + connection.Name);
+                }
             }
+            else
+            {
+                MessageBox.Show("Failed to connect to the Database");
+            }
+            
         }
     }
 }
