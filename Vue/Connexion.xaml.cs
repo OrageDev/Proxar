@@ -24,27 +24,23 @@ namespace Proxar.Vue
     {
         public Connexion()
         {
-
             InitializeComponent();
         }
         
-        
         private void connexionButton_Click(object sender, RoutedEventArgs e)
         {
-            BDDUserManagement connection = new BDDUserManagement();
-            if (connection.Connection() != false)
+            BDDUserManagement connexion = new BDDUserManagement();
+            if (connexion.Connection() != false)
             {
-               
-                if(false != connection.SelectStudent(Identifiant.Text, MotDePasse.Password))
+                if(connexion.SelectStudent(Identifiant.Text, MotDePasse.Password) != false)
                 {
-                    MessageBox.Show("Bonjour : " + connection.Name);
+                    MessageBox.Show("Bonjour : " + connexion.Name);
                 }
             }
             else
             {
                 MessageBox.Show("Failed to connect to the Database");
             }
-            
         }
     }
 }
